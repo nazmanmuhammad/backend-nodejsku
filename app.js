@@ -8,7 +8,7 @@ import cors from 'cors'
 const app = express()
 
 const host = process.env.HOST || undefined
-const port = parseInt(process.env.PORT ?? 8000)
+const port = parseInt(process.env)
 
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
@@ -17,7 +17,7 @@ app.use('/', routes)
 
 const listenerCallback = () => {
     init()
-    console.log(`Server is listening on http://${host ? host : 'localhost'}:${port}`)
+    console.log(`Server is listening on https://backend-nodejsku.herokuapp.com/`)
 }
 
 if (host) {
